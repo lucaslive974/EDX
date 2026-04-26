@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="container-md text-center">
+        <div class="row mb-3">
+            <span class="fw-bold">Symbol  {{ quote.symbol }}</span>
+        </div>
+        <div class="row mb-3">
+            <span>Company Name: {{ quote.name }}</span>
+        </div>
+        <div class="row mb-3">
+            <span>Price: {{ quote.price | usd }}</span>
+        </div>
+    </div>
+{% endblock %}

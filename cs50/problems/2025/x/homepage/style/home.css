@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.navbar-placeholder {
+  height: 60px; /* Adjust based on your navbar height */
+}
+
+main {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.geometry-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  bottom: 0px;
+  right: 0px;
+  width: 640px;
+  height: 640px;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.geometry-container > * {
+  display: block;
+  content: "";
+  width: 84px;
+  height: 800px;
+  background: linear-gradient(to bottom, transparent, #12d8ec);
+  transform: rotate(-45deg);
+}
+
+.geometry-container:nth-child(1) {
+  height: 84px;
+}
+
+.quad-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 360px;
+  height: 480px;
+}
+
+.quad-container #quad {
+  display: block;
+  background: linear-gradient(to left, transparent, #12d8ec);
+  content: "";
+  width:  124px;
+  height: 124px;
+  rotate: 18deg;
+}
+
+
+.triangle-container {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 280px;
+  z-index: -10;
+}
+
+.triangle-container #triangle {
+  display: block;
+  background: linear-gradient(to bottom, transparent, #12d8ec);
+  content: "";
+  width: 124px;
+  height: 124px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.circle-container {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: calc(50% - 360px);
+  width: 360px;
+  height: 360px;
+}
+
+.circle-container #circle {
+  display: block;
+  background: linear-gradient(to bottom, transparent, #12d8ec);
+  content: "";
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .triangle-container {
+    display: flex;
+  }
+  .quad-container {
+    display: flex;
+  }
+  .circle-container {
+    display: flex;
+  }
+}

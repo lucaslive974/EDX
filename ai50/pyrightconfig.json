@@ -1,0 +1,7 @@
+{
+  "typeCheckingMode": "basic",
+  "venvPath": ".",
+  "venv": ".venv",
+  "reportUnknownParameterType": "none",
+  "reportMissingParameterType": "none"
+}

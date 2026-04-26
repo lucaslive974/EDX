@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: has a bad performance in all cases O(n²), even in ordenated arrays, had a exponential grow.
+
+sort2 uses: merge sort
+
+How do you know?: has a performance O(log n), good in all types of entran ces, and has a logarithm grow.
+
+sort3 uses:selection sort
+
+How do you know?: has a bad performance in all cases O(n²), but is slighty better on semi-ordenated arrays, because reduces the numbers of swaps.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let options = document.querySelector("#multi-choice").querySelectorAll("button");
+                let multRes = document.querySelector("#multi-feedback-1");
+
+                let selected = -1;
+                options.forEach((opt, idx) => {
+                    opt.addEventListener("click", () => {
+                        if(selected !== -1) {
+                            options[selected].classList.remove("correct");
+                            options[selected].classList.remove("wrong");
+                        }
+                        selected = idx;
+
+                        if(selected === 1) {
+                            opt.classList.add("correct");
+                            multRes.style.color = "green";
+                            multRes.innerText = "Correct!";
+                        } else {
+                            opt.classList.add("wrong");
+                            multRes.style.color = "red";
+                            multRes.innerText = "Wrong!";
+                        }
+                    })
+                });
+
+
+                let freeRes = document.querySelector("#free-feedback");
+                let form = document.querySelector("#free-form");
+                let ans = form.querySelector("#free-answer");
+
+                form.addEventListener("submit", e => {
+                    e.preventDefault();
+                    let result = ans.value.toLowerCase();
+                    if(result === "gpu" || result.includes("graphic card")) {
+                        ans.style.color = "green";
+                        freeRes.innerText = "Correct!";
+                        freeRes.style.color = "green";
+                    } else {
+                        ans.style.color = "red";
+                        freeRes.innerText = "Incorrect";
+                        freeRes.style.color = "red";
+                    }
+                })
+            })
+        </script>
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What's OpenGL tecnology area?</h3>
+                <div id=multi-feedback-1></div>
+                <div id="multi-choice" class="section">
+                    <button id="0">Web development</button>
+                    <button id="1">Graphic development</button>
+                    <button id="2">Machine Learning</button>
+                    <button id="3">Social Media</button>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What's the component on a computer specialized in render graphics?</h3>
+                <div id="free-feedback"></div>
+                <form id="free-form">
+                    <input id="free-answer" type="text"/>
+                    <button type="submit">Check answer</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

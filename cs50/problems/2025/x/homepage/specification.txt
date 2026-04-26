@@ -1,0 +1,22 @@
+HTML tags:
+
+div
+button
+nav
+a
+p
+ul
+li
+span
+main
+footer
+
+CSS props:
+display
+justify-content
+align-itens
+transform
+background-color
+
+I choosed to use javascript to dynamic alterate the value of a transform rotate property of css to animate the geometric figures of home page and control the sliders
+of color section, and bootstrap for a well-designed navbar with dropdown.
